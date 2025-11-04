@@ -3,6 +3,7 @@ import "./global.css";
 // importing fonts from expo-font
 import {useFonts} from 'expo-font';
 import { useEffect } from "react";
+import GlobalProvider from "@/lib/globalprovider";
 export default function RootLayout() {
 
   SplashScreen.preventAutoHideAsync(); // Prevents the splash screen from auto-hiding
@@ -23,5 +24,10 @@ export default function RootLayout() {
   },[fontsLoaded]);
   if(!fontsLoaded) return null;
 
-  return <Stack screenOptions={{headerShown: false}} />;
+  return (
+    <GlobalProvider>
+      <Stack screenOptions={{headerShown: false}} />
+    </GlobalProvider>
+    
+  )
 }
