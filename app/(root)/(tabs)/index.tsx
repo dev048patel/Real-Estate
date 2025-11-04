@@ -18,7 +18,6 @@ export default function Index() {
   return (
     <SafeAreaView className="bg-white h-full">
       
-      <Button title="Seed" onPress={seed } />
       {/* FlatList */}
       <FlatList 
         data ={[1, 2, 3, 4]} 
